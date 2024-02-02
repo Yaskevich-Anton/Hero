@@ -1,6 +1,13 @@
-public abstract class Hero {
+package Heroes;
+import Weapon.Weapon;
+public abstract class Hero<T extends Weapon> {
     private String name;
     private int damage;
+    private T weapon;
+
+    public void setWeapon(T weapon) {
+        this.weapon = weapon;
+    }
 
     public Hero(String name, int damage) {
         this.name = name;
@@ -15,5 +22,5 @@ public abstract class Hero {
         return damage;
     }
 
-    public abstract void attackEnemy(Enemy enemy, Hero hero);
+    public abstract void attackEnemy(Enemy enemy);
 }
